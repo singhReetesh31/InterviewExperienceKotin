@@ -6,5 +6,7 @@ import java.util.*
 interface IInterviewExpService {
     fun addForm(form: InterviewExperienceForm)
     fun getForms():List<InterviewExperienceForm>
-    fun getFormUserName(userName:String):Optional<InterviewExperienceForm?>
+    fun getFormByUserName(userName:String):List<InterviewExperienceForm>
+    fun deleteForm(id:String)
+    fun updateForm(id: String,form: InterviewExperienceForm)
 }

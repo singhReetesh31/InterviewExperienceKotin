@@ -7,7 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document(collection = "inerview_experience_form")
 data class InterviewExperienceForm (
     @Id
-    val userName:String?=null,
+    val id:String?=null,
+    val userName:String,
     var company:String,
     var role:String,
     var isSelected:Boolean,
