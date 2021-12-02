@@ -3,6 +3,7 @@ package com.axis.InterviewExperience.controller
 import com.axis.InterviewExperience.exception.UserNameAlreadyExist
 import com.axis.InterviewExperience.exception.UserNameNotFound
 import com.axis.InterviewExperience.model.InterviewExperienceForm
+import com.axis.InterviewExperience.model.Template
 import com.axis.InterviewExperience.service.IInterviewExpService
 import com.axis.InterviewExperience.service.InterviewExpService
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
-@RequestMapping("/interviewExperience")
+@RequestMapping("")
 class InterviewExpController {
     @Autowired
     lateinit var service:InterviewExpService
@@ -21,6 +22,8 @@ class InterviewExpController {
     fun getForms():ResponseEntity<List<InterviewExperienceForm>>{
         return ResponseEntity(service.getForms(),HttpStatus.OK)
     }
+    @PostMapping("/addTemplate")
+    fun addTemplate(@RequestBody template: Template){
 
-
+    }
 }
