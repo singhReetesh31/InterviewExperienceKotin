@@ -20,4 +20,8 @@ class ExceptionHandler {
     fun IdNotFoundExceptionHandler(exception: Exception):ResponseEntity<Any>{
         return ResponseEntity(exception.message,HttpStatus.NOT_FOUND)
     }
+    @ExceptionHandler(FieldCanNotBeEmptyException::class)
+    fun FieldCanNotBeEmptyExceptionHandler(exception: Exception):ResponseEntity<Any>{
+        return ResponseEntity(exception.message,HttpStatus.BAD_REQUEST)
+    }
 }

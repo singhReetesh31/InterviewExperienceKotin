@@ -11,10 +11,18 @@ data class Template(
     @Id
     val id: String?=null,
     var like:Int?,
-    var comments:MutableList<Comment?>,
+   // @DocumentReference
+    var comments:MutableList<Comment>,//can't perform edit or delete
     var views:Int?,
     var report:String?,//report an issue with this template
    // @DBRef(db="interview_experience_form")
     @DocumentReference
-    val form: InterviewExperienceForm?
-        )
+    val form: InterviewExperienceForm
+        ){
+    fun addComment(comment: Comment){
+        comments.add(comment)
+    }
+    fun deleteComment(comment: Comment){
+        comments.remove(comment)
+    }
+}

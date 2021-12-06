@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository
 import java.util.*
 
 
-interface IInterviewExpDao: MongoRepository<InterviewExperienceForm,String> {
+interface IUserInterviewExpFormDao: MongoRepository<InterviewExperienceForm,String> {
     fun getFormByUserName(userName:String):List<InterviewExperienceForm>
    // db.inerview_experience_form.find().limit(1).sort({$natural:-1}).pretty()
   // @Query(value = "{'${naturalOrder<Comparator<InterviewExperienceForm.>>()}': ?-1}")
